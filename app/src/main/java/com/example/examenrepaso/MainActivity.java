@@ -3,15 +3,19 @@ package com.example.examenrepaso;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
 
@@ -39,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
                  final Uri locationForPhotos = null;
                 Toast.makeText(MainActivity.this,"Redirigiendo a la camara", Toast.LENGTH_SHORT).show();
                 Intent camara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            //    camara.putExtra(MediaStore.EXTRA_OUTPUT,
-              //          Uri.withAppendedPath(locationForPhotos, targetFilename));
+
+              //camara.putExtra(MediaStore.EXTRA_OUTPUT,
+             // Uri.withAppendedPath(Uri.parse("/sdcard/DCIM/Camera"), "fotoEjemplo"));
+
                 startActivity(camara);
                 return true;
             case R.id.submenuopcion2:
@@ -50,10 +57,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.activityDialog:
                 Toast.makeText(MainActivity.this,"Dialog", Toast.LENGTH_SHORT).show();
+                Intent dialogos = new Intent(MainActivity.this,DialogActivity.class);
+                startActivity(dialogos);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
