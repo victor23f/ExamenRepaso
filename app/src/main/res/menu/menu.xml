@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/itemsmenu" android:title="Opciones">
+
+        <menu>
+
+            <item android:id="@+id/activitySpinner" android:title="Spinners"></item>
+            <item android:id="@+id/activityIntentsImplicitos" android:title="Intents Implicitos">
+                <menu>
+                    <item android:id="@+id/submenuopcion1" android:title="Abrir camara"></item>
+                    <item android:id="@+id/submenuopcion2" android:title="Abrir calendario"></item>
+                </menu>
+            </item>
+            <item android:id="@+id/activityDialog" android:title="Cuadros de dialogo"></item>
+
+        </menu>
+
+
+    </item>
+</menu>
